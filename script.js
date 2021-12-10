@@ -1,4 +1,3 @@
-
 function forEach(array, callback) {
     for(let i = 0; i < array.length; i++) {
         callback(array[i], i)
@@ -28,11 +27,11 @@ const price = 0;
 const productsList = document.getElementById('products');
 
 
-// productsList.innerHTML = price;
+productsList.innerHTML = price;
 
 
 const removeTask = (prod) => {
-    document.querySelector(`[data-task="${prod.id}"]`).remove();
+    document.querySelector(`[data-prod="${prod.id}"]`).remove();
 };
 
 const productsHtml = map(products, (prod) => {
@@ -42,7 +41,7 @@ const productsHtml = map(products, (prod) => {
             <p>${prod.name}</p>
             <p>${prod.price}</p>
             <button >-</button>
-            <button onclick='removeTask(${JSON.stringify(prod)}'>X</button>
+            <button onclick='removeTask(${JSON.stringify(prod)})'>X</button>
         </li>
     `
 });
