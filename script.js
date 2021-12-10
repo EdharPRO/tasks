@@ -4,46 +4,36 @@ function forEach(array, callback) {
     };
 };
 
-
 function map(array, callback) {
     const result = [];
 
-    forEach(array, (arr, index) => {
-        result.push(callback(arr, index))
+    forEach(array, (arr) => {
+        result.push(callback(arr))
     })
 
     return result;
 };
 
 const products = [
-    { id: 1, name: 'Pencil', price: 12 }, 
-    { id: 2, name: 'Pen', price: 12 }
+    { id: 1, name: 'Pencil', price: "10,00" }, 
+    { id: 2, name: 'Pen', price: "12,00 "}
 ];
 
+const prodHtml = document.getElementById('products');
 
-
-
-const price = 0;
-const productsList = document.getElementById('products');
-
-
-productsList.innerHTML = price;
-
-
-const removeTask = (prod) => {
+const removeProd = (prod) => {
     document.querySelector(`[data-prod="${prod.id}"]`).remove();
 };
 
-const productsHtml = map(products, (prod) => {
+const prodElement = map(products, (prod) => {
     return `
         <li data-prod="${prod.id}">
-            <button>+</button>
-            <p>${prod.name}</p>
-            <p>${prod.price}</p>
-            <button >-</button>
-            <button onclick='removeTask(${JSON.stringify(prod)})'>X</button>
+            <h1 class="">${prod.name}</h1>
+            <p>Цена товара ${prod.price} гривен</p>
+            <button >+</button>
+            <button onclick='removeProd(${JSON.stringify(prod)})'>-</button>
         </li>
     `
 });
 
-productsList.innerHTML = productsHtml;
+prodHtml.innerHTML = prodElement;
