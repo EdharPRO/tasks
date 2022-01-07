@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./script.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <ul id="tasks">
-        <!-- filled by JS -->
-    </ul>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
 
-    <ul id='products'>        
-        <!-- filled by JS -->
-    </ul>
+        
+		<div class="simple-todo ">
+			<div class="tasks-wrapper">
+				<h2>Список задач</h2>
+				<ul id="todo-list">
+					<li>Посмотреть вебинар</li>
+					<li>Написать конспект</li>
+					<li>Повторить код с урока</li>
+				</ul>
+			</div>
+			
+			<form id="todo-form">
+				<input id="todo-input" type="text" placeholder="Введите название задачи" />
+				<button id="button" type="button">Добавить задачу</button>
+			</form>
+		</div>
 
-    <ul></ul>
-</body>
+		<script src="./main.js"></script>
+	</body>
 </html>
