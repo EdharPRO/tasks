@@ -26,4 +26,6 @@
 
   }
 
-  
+  .new_li {
+      list-style: none;
+  }
