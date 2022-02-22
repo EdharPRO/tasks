@@ -31,7 +31,7 @@ btnAdd.addEventListener('click', () => {
 
 ulList.addEventListener('click', ({ target }) => {
     const btnDel = target.closest('[delete-li-btn]');
-    const delNewLi = btnDel?.closest('[new-li]')
+    const delNewLi = btnDel?.closest('[new-li]');
 
-    delNewLi.remove()
+    delNewLi?.remove()
 });

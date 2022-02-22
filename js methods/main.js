@@ -41,24 +41,24 @@ function find (arr, num) {
 // найти в массиве массивы длинна которых четная
 // все числа которые больше 5
 // посчитать сумму числе по диагонале в двумерном массиве
-//
-const array = [
-    [ 1, 2, 3, 4, 5, 6, 7, 8 ],
-    [ 9, 10, 11, 12, 13, 14, 15, 16 ],
-    [ 17, 18, 19, 20, 21, 22, 23, 24 ],
-    [ 25, 26, 27, 28, 29, 30, 31, 32 ],
-    [ 33, 34, 35, 36, 37, 38, 39, 40 ],
-    [ 41, 42, 43, 44, 45, 46, 47, 48 ],
-    [ 49, 50, 51, 52, 53, 54, 55, 56 ],
-    [ 57, 58, 59, 60, 61, 62, 63, 64 ]
-];
-console.log()
-console.log()
-console.log()
+// //
+// const array = [
+//     [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+//     [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+//     [ 17, 18, 19, 20, 21, 22, 23, 24 ],
+//     [ 25, 26, 27, 28, 29, 30, 31, 32 ],
+//     [ 33, 34, 35, 36, 37, 38, 39, 40 ],
+//     [ 41, 42, 43, 44, 45, 46, 47, 48 ],
+//     [ 49, 50, 51, 52, 53, 54, 55, 56 ],
+//     [ 57, 58, 59, 60, 61, 62, 63, 64 ]
+// ];
+// console.log()
+// console.log()
+// console.log()
 
-function getNothing (arr, x, y) {
-    return q = arr[x][y]
-}
+// function getNothing (arr, x, y) {
+//     return q = arr[x][y]
+// }
 
 // const numbers = [1, 2, 3, 4, 5, 6]
 // let q = []
@@ -90,7 +90,16 @@ function getNothing (arr, x, y) {
 // console.log(getNum(numbers))
 
 
-
+// const array = [
+//     [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+//     [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+//     [ 17, 18, 19, 20, 21, 22, 23, 24 ],
+//     [ 25, 26, 27, 28, 29, 30, 31, 32 ],
+//     [ 33, 34, 35, 36, 37, 38, 39, 40 ],
+//     [ 41, 42, 43, 44, 45, 46, 47, 48 ],
+//     [ 49, 50, 51, 52, 53, 54, 55, 56 ],
+//     [ 57, 58, 59, 60, 61, 62, 63, 64 ]
+// ];
 
 
 // function asdfqwef(arr) {
@@ -133,23 +142,23 @@ function getNothing (arr, x, y) {
 // ];
 
 
-const numbers = [[11, 21, 31, 41, 51, 61, 71, 81], [200], [300], [4], [5], [643]];
+// const numbers = [[11, 21, 31, 41, 51, 61, 71, 81], [200], [300], [4], [5], [643]];
 
-let q = []
-const eee2 = numbers.forEach(function (item) {
- let q = 0;
- let w = 0;
-    if (item[q][w] !== undefined) {
-        q.push(item.toString())
-        w++
-        q++
-    }
+// let q = []
+// const eee2 = numbers.forEach(function (item) {
+//  let q = 0;
+//  let w = 0;
+//     if (item[q][w] !== undefined) {
+//         q.push(item.toString())
+//         w++
+//         q++
+//     }
     
-});
+// });
 
-const hello = numbers.forEach((item, x, y) => {
+// const hello = numbers.forEach((item, x, y) => {
     
-})
+// })
 
 
 // function getOne(arr, x, y) {
@@ -159,7 +168,7 @@ const hello = numbers.forEach((item, x, y) => {
 //         if (arr[x][y] !== undefined ) {
 //             w.push(arr[x][y])
 //             y++
-//         }
+//         }    
 //         // y++
 //     }
 
@@ -188,3 +197,41 @@ const hello = numbers.forEach((item, x, y) => {
 // }
 
 // console.log(getNum(numbers, 0,0))
+
+
+
+
+const array = [
+    [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+    [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+    [ 17, 18, 19, 20, 21, 22, 23, 24 ],
+    [ 25, 26, 27, 28, 29, 30, 31, 32 ],
+    [ 33, 34, 35, 36, 37, 38, 39, 40 ],
+    [ 41, 42, 43, 44, 45, 46, 47, 48 ],
+    [ 49, 50, 51, 52, 53, 54, 55, 56 ],
+    [ 57, 58, 59, 60, 61, 62, 63, 64 ]
+];
+
+// function getNothing (arr, x, y) {
+//     return arr[x][y]
+// }
+
+const lolo = []
+
+for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+        if (i === j && array[i][j] % 2 === 0) {
+            lolo.push({
+                x: i, 
+                y: j, 
+                value: array[i][j]
+            })
+        }
+    }
+}
+
+
+console.log(lolo)
+
+// начать решать задачи про массивы из гугл (перенести в функции или блоки кода\анонимные самовызывающиеся функции)
+// придумывать для себя задачи подходящего уровня по массивам
