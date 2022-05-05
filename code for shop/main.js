@@ -1,113 +1,49 @@
-const list = document.querySelector('#basket__list');
-const productCards = document.querySelector('#cards');
+import { getPurchaseHtml, deletePurchase, getPurchases } from "./modules/purchses";
+import { addProduct, buyProduct } from "./modules/products";
+import { products } from "./modules/db";
 
-// ф-ция создаёт товар в корзине
-function getPurchaseHtml({ id, count, product }) {
-    return `
-    <li>
-        <div data-purchase="${id}" class="card">
-            <h3 class="card__title">${product.title}</h3>
-            <p class="card__price">${product.price * count}</p>
-            <p class="card__weight">${product.weight * count}</p>
+export const purchasesElement = document.querySelector('#basket__list');
+export const productsElement = document.querySelector('#cards');
 
-            <button data-del-add class="card__button">Удалить</button>
-        </div>
-    </li>
-    `
-};
+products.forEach(addProduct);
 
-const getPurchases = () => JSON.parse(localStorage.getItem('shop')) || [];
+purchasesElement.innerHTML = getPurchases().map(getPurchaseHtml).join('');
 
-list.innerHTML = getPurchases().map(getPurchaseHtml).join('');
-
-// window.add??
-productCards.addEventListener('click', ({ target }) => {
+productsElement.addEventListener('click', ({ target }) => {
     if (target.hasAttribute('data-add-btn')) {
-        // выбор продукта рядом с кнопкой добавить
+         // выбор продукта рядом с кнопкой добавить
         const cardElement = target.closest('[data-card]');
 
-        // id продукта
+         // id продукта
         const productId = +cardElement.dataset.card;
-        // тут мы нахдим ПРОДУКТ по ID
-        const product = products.find(({ id }) => id === productId);
-        const existedPurchase = getPurchases().find(({ product }) => product.id === productId);
-        const newPurchase = {
-            id: existedPurchase?.id || Date.now(),
-            product,
-            count: 1 + (existedPurchase?.count || 0)
-        };
 
-        const purchases = existedPurchase 
-            ? getPurchases().map((purchase) => purchase.id === existedPurchase.id ? newPurchase : purchase)
-            : getPurchases().concat(newPurchase);
-
-
-        // const cardInfo = {
-        //     id: goodsArr,
-        //     title: card.querySelector('.card__title').innerText,
-        //     price: card.querySelector('.card__price').innerText,
-        //     weight: card.querySelector('.card__weight').innerText,
-        // };
-
-        localStorage.setItem('shop', JSON.stringify(purchases));
-        
-        if (existedPurchase) {
-            list.querySelector(`[data-purchase="${existedPurchase.id}"]`).remove();
-        }
-    
-        list.insertAdjacentHTML('beforeend', getPurchaseHtml(newPurchase));
-    }
+        buyProduct(productId);
+    };
 });
 
-list.addEventListener('click', ({ target }) => {
-    const delBtn = target.closest('[data-del-add]')
-    const delCard = delBtn?.closest('[data-purchase]')
+purchasesElement.addEventListener('click', ({ target }) => {
+    const delBtn = target.closest('[data-del-add]');
+    const delCard = delBtn?.closest('[data-purchase]');
 
-    if(!delCard) return
+    if (!delCard) return;
 
-    const cardId = +delCard.dataset.purchase;
-    const purchases = getPurchases().filter(({ id }) => id !== cardId);
+    const purachseId = +delCard.dataset.purchase;
 
-    localStorage.setItem('shop', JSON.stringify(purchases))
+    deletePurchase(purachseId);
+    delCard.remove();
+});
 
-    delCard.remove()
-})
+// ПРИМЕР С ;;;;;;
+// purchasesElement.addEventListener('click', ({ target }) => {
+//     const delBtn = target.closest('[data-del-add]');
+//     const delCard = delBtn?.closest('[data-purchase]');
 
-// это не практикуют. должен быть только 1 список!!!
-const products = [
-    {
-        title: 'Ананас',
-        price: 15,
-        weight: 1,
-        id: 1
-    },
-    {
-        title: 'Яблоки',
-        price: 12,
-        weight: 1,
-        id: 2
-    },
-    {
-        title: 'Манго',
-        price: 18,
-        weight: 1,
-        id: 3,
-    }
-];
+//     if (!delCard) return;
 
-//или копировать с html?
-function addGoods(product) {
-    const templateGood = `
-        <div data-card=${product.id} class="card">
-            <h3 class="card__title">${product.title}</h3>
-            <p class="card__price">${product.price} грн</p>
-            <p class="card__weight">${product.weight} кг</p>
+//     const cardId = +delCard.dataset.purchase;
+//     const purchases = getPurchases().filter(({ id }) => id !== cardId);
 
-            <button data-add-btn class="card__button">Добавить</button>
-        </div>
-    `
+//     localStorage.setItem('goods3', JSON.stringify(purchases));
 
-    productCards.insertAdjacentHTML('beforeend', templateGood)
-};
-
-products.forEach(addGoods);
+//     delCard.remove();
+// });
