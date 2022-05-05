@@ -1,41 +1,94 @@
 
 // Методы JS
 const numbersArr = [5, 1, 2, 3, 4, 5];
-const chaosArr = ['a', true, 3, 5, 5, 6, 7, '>'];
+// const chaosArr = ['a', true, 3, 5, 5, 6, 7, '>'];
 
 
-forEach
+// forEach
+// function forEach(arr, callback) {
+//     for (let i = 0; i < arr.length; i++) {
+//         callback(arr[i], i)
+//     }
+// }
+
 function forEach(arr, callback) {
     for (let i = 0; i < arr.length; i++) {
         callback(arr[i], i)
     }
 }
 
+console.log(forEach(numbersArr, function(item) {
+    item
+}))
+
 // return выходит только из функции
 // findIndex
-function findIndex (arr, item) {    
-    for (let i = 0; i < arr.length; i++) {
-        if (item === arr[i]) {
-            return i;
-        }
-    }
+// function findIndex (arr, item) {    
+//     for (let i = 0; i < arr.length; i++) {
+//         if (item === arr[i]) {
+//             return i;
+//         }
+//     }
 
-    return -1;
-}
-console.log()
+//     return -1;
+// }
+// console.log()
 // console.log(findIndex(numbersArr, 3312)) // 1 (index)
+// const asdqq = [14, 4, 1, 2, 3, 'dsf', '<', true]
 
 
-// const asdqq = [1, 2, 3, 'dsf', '<', true]
+const asdqq = [14, 4, 1, 2, 3, 'dsf', '<', true];
+
+
+// function filter(arr, callback) {
+//     const newArr = []
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (callback(arr[i], i, arr)) {
+//             newArr.push(arr[i])
+//         }
+//     }
+
+//     return newArr
+// }
+
+// console.log(filter(asdqq, (item) => typeof item === 'boolean'))
+
+// function map(arr, callback) {
+//     const newArr = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         newArr.push(callback(arr[i], i, arr))
+//     }
+
+//     return newArr;
+// }
+
+// console.log(map(asdqq, (item) => item * 2))
+
 // FIND
-function find (arr, num) {
-    for (let i = 0; i < arr.length; i++) {
-        if (num === arr[i]) {
-            return arr[i]
-        }
-    }
-}
-// console.log(find(asdqq, () => {})) //
+// function find (arr, callback) {    
+//     for (let i = 0; i < arr.length; i++) {
+//         if (callback(arr[i], i, arr)) {
+//             return arr[i];
+//         }
+//     }
+// }
+// console.log(find(asdqq, (item) => item === 4))
+
+
+// function findIndex(array, callback) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (callback(array[i], i, array)) {
+//             return i;
+//         }        
+//     }
+
+//     return -1;
+// }
+
+// console.log(findIndex(asdqq, (item) => item === 1))
+
 
 // найти все четные числа в масс
 // найти в массиве массивы длинна которых четная
@@ -58,7 +111,7 @@ function find (arr, num) {
 
 // function getNothing (arr, x, y) {
 //     return q = arr[x][y]
-// }
+// }0
 
 // const numbers = [1, 2, 3, 4, 5, 6]
 // let q = []
@@ -201,37 +254,147 @@ function find (arr, num) {
 
 
 
-const array = [
-    [ 1, 2, 3, 4, 5, 6, 7, 8 ],
-    [ 9, 10, 11, 12, 13, 14, 15, 16 ],
-    [ 17, 18, 19, 20, 21, 22, 23, 24 ],
-    [ 25, 26, 27, 28, 29, 30, 31, 32 ],
-    [ 33, 34, 35, 36, 37, 38, 39, 40 ],
-    [ 41, 42, 43, 44, 45, 46, 47, 48 ],
-    [ 49, 50, 51, 52, 53, 54, 55, 56 ],
-    [ 57, 58, 59, 60, 61, 62, 63, 64 ]
-];
+// const array = [
+//     [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+//     [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+//     [ 17, 18, 19, 20, 21, 22, 23, 24 ],
+//     [ 25, 26, 27, 28, 29, 30, 31, 32 ],
+//     [ 33, 34, 35, 36, 37, 38, 39, 40 ],
+//     [ 41, 42, 43, 44, 45, 46, 47, 48 ],
+//     [ 49, 50, 51, 52, 53, 54, 55, 56 ],
+//     [ 57, 58, 59, 60, 61, 62, 63, 64 ]
+// ];
 
 // function getNothing (arr, x, y) {
 //     return arr[x][y]
 // }
 
-const lolo = []
+// const lolo = []
 
-for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array[i].length; j++) {
-        if (i === j && array[i][j] % 2 === 0) {
-            lolo.push({
-                x: i, 
-                y: j, 
-                value: array[i][j]
-            })
-        }
-    }
-}
+// for (let i = 0; i < array.length; i++) {
+//     for (let j = 0; j < array[i].length; j++) {
+//         if (i === j && array[i][j] % 2 === 0) {
+//             lolo.push({
+//                 x: i, 
+//                 y: j, 
+//                 value: array[i][j]
+//             })
+//         }
+//     }
+// }
 
 
-console.log(lolo)
+// console.log(lolo)
 
 // начать решать задачи про массивы из гугл (перенести в функции или блоки кода\анонимные самовызывающиеся функции)
 // придумывать для себя задачи подходящего уровня по массивам
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// find, findIndex, filter, map, forEach
+
+console.log()
+console.log()
+console.log()
+const nummmber = [3,4,5,6,7]
+const words = ['колбаска', 'сырочек', 'сосисочка', 'мяско', 'котлетка']
+
+
+function revers(array) {
+    const newArr = [];
+
+    for (let i = 0; i < array.length; i++) {
+        newArr.unshift(array[i])
+    }
+
+    return console.log(newArr)
+}
+
+// revers(nummmber)
+// revers(words)
+
+
+function map(array, callback) {
+    const newArr = []
+
+    for (let i = 0; i < array.length; i++) {
+        newArr.push(callback(array[i], i, array))
+    }
+
+    return console.log(newArr)
+}
+
+// map(nummmber, (item) => item * 2)
+
+
+function filter(array, callback) {
+    const newArr = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i, array)) {
+            newArr.push(array[i])
+        }        
+    }
+
+    return console.log(newArr);
+}
+
+// filter(words, (item => item.length > 3))
+
+
+
+
+function findNUm(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i, array)) {
+            return array[i]
+        }
+    }
+    return
+};
+
+// console.log(findNUm(nummmber, (item) => item === 4))
+
+
+// function findIndexx(array, callback) {
+//     for (let i = 0; i < array.length; i++) {
+//         if(callback(array[i], i, array)) {
+//             return i
+//         }        
+//     }
+
+//     return -1
+// }
+
+
+// console.log(findIndexx(nummmber, (item) => item === 7))
+
+
+
+
+
+// const lol = [1, 2, 3, 4]
+// function forEach(array, callback) {
+//     for (let i = 0; i < array.length; i++) {
+//         callback(array[i])
+//     }
+// }
+
+
+// console.log(forEach(lol, (item) => item))
+
+
+

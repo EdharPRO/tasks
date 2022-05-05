@@ -1,39 +1,40 @@
 const todoList = document.querySelector('#todo-list');
 const todoInput = document.querySelector('#todo-input');
 const button = document.querySelector('#button');
-const tasks = [
-    {
-        id: 1,
-        name: 'Ivan',
-    },
-    {
-        id: 2,
-        name: 'Jimmy',
-    }
-];
 
-todoList.innerHTML = tasks.map(getTaskHtml).join('');
+const getTasks = () => JSON.parse(localStorage.getItem('tasks')) || [];
+
+todoList.innerHTML = getTasks().map(getTaskHtml).join('');
 
 button.addEventListener('click', () => {
-    todoList.insertAdjacentHTML('beforeend', getTaskHtml({
+    const task = {
         id: Date.now(),
         name: todoInput.value
-    }));    
+    };
 
-    todoInput.value = '';    
-})
+    localStorage.setItem('tasks', JSON.stringify(getTasks().concat(task)));
+    todoList.insertAdjacentHTML('beforeend', getTaskHtml(task));    
 
+    todoInput.value = '';
+});
 
 todoList.addEventListener('click', ({ target }) => {
+    // кнопка элемента удаления
     const deleteBtnEl = target.closest('[data-delete-task]');
+    // ссылка на дом элемент
     const taskEl = deleteBtnEl?.closest('[data-task]');
 
     if (!taskEl) { 
         return;
     }
+
+    const taskID = +taskEl.dataset.task;
+    const filtredTasks = getTasks().filter(({ id }) => id !== taskID);
+
+    localStorage.setItem('tasks', JSON.stringify(filtredTasks));
     
-    taskEl.remove()    
-})
+    taskEl.remove();
+});
 
 function getTaskHtml(task) {
     return `
@@ -45,4 +46,4 @@ function getTaskHtml(task) {
             </button>
         </li>
     `;
-}
+};

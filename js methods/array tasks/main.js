@@ -1,20 +1,27 @@
 
-const arrNum = [22, 43, 123, 62, 234, 84, 137, 34, 6, 23, 63];
-const arr = [2, 10, 5, 3, 9]
+// const arr = [2, 10, 5, 3, 9]
 
 
 //          !DONE
 // 1. Клонирование массива
 
 // const vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
-// function arrayClone(arr) {
+function arrayClone(arr) {
 
-//     return arr2 = arr.slice()
+    return arr.slice()
 
-// }
+}
 
 // const arr1 = arrayClone(vegetables);
 
+// const result = []
+
+// for(let i = 0; i < vegetables.length;i++){
+    
+//     result[i] = vegetables[i]
+// }
+
+// console.log(result)
 
 //              !Done
 // 2. Преобразование массива в строку
@@ -25,11 +32,22 @@ const arr = [2, 10, 5, 3, 9]
 // console.log(vegetables.toString())
 // console.log(vegetables.join(','))
 
+// let result = '';
+
+// for(let i = 0; i < vegetables.length; i++) {
+    
+//     result += vegetables[i] + (i === vegetables.length - 1 ? '' : ', ')
+// }
+
+// console.log(result)
+
 
 
 //           !DONE
 // Дан массив с числами. Переберите его циклом и в каждой итерации цикла выведите следующий элемент массива.
 
+
+// УБРАТЬ UNDEFINE
 // for (let i = 0; i < arrNum.length; i++) {
 //     console.log(arrNum[i + 1])
 // }
@@ -38,22 +56,38 @@ const arr = [2, 10, 5, 3, 9]
 // Модифицируйте предыдущую задачу так, чтобы в каждой итерации цикла выводилась сумма текущего и следующего элемента массива.
 
 
-// for (let i = 0; i < arrNum.length; i++) {
+
+// for (let i = 0; i < arrNum.length - 1; i++) {
+
 //     console.log(arrNum[i] + arrNum[i + 1])
+
 // }
+
+
 //Доработать нужно, последний элемент получается NaN
+
+
 
 //             !Done
 // Дан массив с числами. Переберите его циклом и в каждой итерации цикла выведите два предыдущих элемента массива.
 
-// for (let i = 1; i < arrNum.length; i++) {
+
+
+// for (let i = 2; i < arrNum.length + 1; i++) {
 //     console.log(arrNum[i - 2], arrNum[i - 1])
 // }
 
+
+
 //             !Done
 // Модифицируйте предыдущую задачу так, чтобы в каждой итерации цикла выводилась сумма двух предыдущих элементов и текущего элемента массива.
-// for (let i = 2; i < arrNum.length; i++) {
-//     console.log(arrNum[i - 2] + arrNum[i - 1], arrNum[i])
+
+// ?? запомнить что это такое!!! оператор нулевого слияния
+// смотреть в чем разница в примере
+
+
+// for (let i = 0; i < arrNum.length ; i++) {
+//     console.log(arrNum[i] + (arrNum[i - 1] || 0) + (arrNum[i - 2] ?? 0))
 // }
 
 //             !Done
@@ -61,6 +95,7 @@ const arr = [2, 10, 5, 3, 9]
 // for (let i = 2; i < arrNum.length; i++) {
 //     console.log(arrNum[i - 2] + arrNum[i - 1] + arrNum[i])
 // }
+
 
 
 //                 !!DONE
@@ -93,19 +128,18 @@ const arr = [2, 10, 5, 3, 9]
 
 // Как вывести индекс в цикле ? Гугл молчит
 
-// for( let i = 0; i < positiveArr. length; i++) {
+// for( let i = 0; i < positiveArr.length; i++) {
 //     if (positiveArr[i] > 0) { 
-//         console.log(positiveArr[i] )
+//         console.log(positiveArr[i], i)
 //     }
 // }
 
-// const positive = positiveArr.forEach((item, index) => {
+// positiveArr.forEach((item, index) => {
 //     if (item > 0) {
 //         console.log(item, index)
 //     }
 // })
 
-// console.log(positive)
 
 
 
@@ -114,7 +148,7 @@ const arr = [2, 10, 5, 3, 9]
 
 //         !DONE
 // Все элементы массива поделить на значение наибольшего элемента этого массива
-// const arrNum3 = [22, 43, 123, 62, 84]
+// const arrNum3 = [22, 43, 123, 62, 84];
 
 // const allNum = arrNum3.reduce((sum, current) => sum + current, 0);
 
@@ -124,7 +158,22 @@ const arr = [2, 10, 5, 3, 9]
 //     if (a < b) return -1;
 // }
 
-// const specialNum = arrNum3.sort(sortNum)
+// const maxNum = Math.max(...arrNum3)
+// console.log(maxNum)
+
+
+// for(let i = 0; i > arr.arrNum3; i++);
+
+//  НАПИСАТЬ ФУНКЦИЮ НАХОЖДЕНИЕ САМОГО БОЛЬШОГО ЧИСЛО
+
+// СОРТИРОВКА ЧЕРЕЗ АБСТРАКЦИЮ ЗАДАЧКИ ПРО КОЗУ И ВОЛКА
+//
+//
+//
+//
+
+// const specialNum = arrNum3.slice().sort((a, b) => a - b)
+// // const specialNum = arrNum3.sort((a, b) => a - b)
 // const lastSpecialNum = specialNum[specialNum.length - 1]
 
 // let divNum = allNum / lastSpecialNum
@@ -166,12 +215,7 @@ const arr = [2, 10, 5, 3, 9]
 // console.log(culc(xx))
 
 
-
-
-
-// let ss = []
-
-// const cc = xx.forEach((item, index) => {
+// xx.forEach((item, index) => {
     
 //     console.log(index)
 //     if ( index === 0) {
@@ -180,9 +224,6 @@ const arr = [2, 10, 5, 3, 9]
 //     }
 
 // })
-
-// console.log(cc)
-// console.log(ss)
 
 // for (let i = 0; i < xx.length; i++) {
 //     const element = xx[i];
@@ -204,7 +245,8 @@ const arr = [2, 10, 5, 3, 9]
 
 
 // const negNum = negArr.filter(item => item < 0);
-// console.log(negNum.reduce((sum, current) => sum + current, 0))
+// console.log(negArr.reduce((sum, current) => current < 0 ? sum + current : sum, 0))
+
 
 
 
@@ -283,16 +325,18 @@ const arr = [2, 10, 5, 3, 9]
 //          !doesn`t work
 
 // В массиве найти минимальный и максимальный элементы, поменять их местами.
-for (let i = 0; i < arr.length; i++) {
-    let result
+// for (let i = 0; i < arr.length; i++) {
+//     let result
 
-    if (arr[i] >= arr[i - 1]) {
-    //    console.log( result = arr[i])
-    }
-}
+//     if (arr[i] >= arr[i - 1]) {
+//     //    console.log( result = arr[i])
+//     }
+// }
 
 
 
+
+// ЗАДАЧКИ НА ФУНКЦИИ
 
 
 
@@ -300,19 +344,42 @@ for (let i = 0; i < arr.length; i++) {
 // Напишите функцию removeDuplicates(arr), которая возвращает массив, в котором удалены повторяющиеся элементы из массива arr (игнорируйте чувствительность к регистру).
 
 
-// let arr = ["php", "php", "css", "css",
-//   "script", "script", "html", "html", "java"
-// ];
-// function removeDuplicates(arr) {
+let arr = ["php", "php", "css", "css",
+  "script", "script", "html", "html", "java", '123', '123'
+];
 
+function removeDuplicates(arr) {
+    let uniqArr = [];
 
-// Ваш код
+    for(let i = 0; i < arr.length; i++) {
+        // console.log(includes(uniqArr, arr[i]), arr[i])
+        if (!uniqArr.includes(arr[i])) {
+           uniqArr.push(arr[i])
+        }
+    }
 
+    return uniqArr
+}
+
+console.log(removeDuplicates(arr))
+
+// function includes(array, item) {
+//     const clonedArray = arrayClone(array)
+
+    
+    
+//     for (let i = 0; i < clonedArray.length; i++) {
+//         if (clonedArray[i] === item) {
+//             return true;
+//         }
+        
+//         return false;
+//     }
 // }
 
 
 // for (let i = 1; i < arr.length; i++) {
-//     const ele = []
+//     // const ele = []
 //     if (arr[i] === arr[i -1]) {
 //         console.log(arr[i])
 //     } else {
@@ -362,7 +429,7 @@ for (let i = 0; i < arr.length; i++) {
 
 // console.log(getFirst(array)) // 1
 // console.log(getFirst(array, 4)) // 1,2,3,4
-// console.log(getFirst(array, -3)) // 1,2,3,4,5,6 
+// console.log(getFirst(array, -3)) // 1,2,3,4,5,6
 
 
 // const xx = "*";
