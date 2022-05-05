@@ -1,0 +1,55 @@
+.body {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+};
+
+.main {
+    display: flex;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding-left: 13px;
+
+}
+.cards {
+    display: flex;
+}
+.card {
+    margin-left: 20px;
+}
+.card__title {
+    display: flex;
+    justify-content: center;
+}
+.card__price {
+    display: flex;
+    justify-content: center;
+}
+.card__weight {
+    display: flex;
+    justify-content: center;
+}
+.card__button {
+    display: flex;
+    justify-content: center;
+}
+.basket {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.basket__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding-left: 13px;
+}
+.basket__list {
+    display: flex;
+    list-style: none;
+    padding-left: 13px;
+}
